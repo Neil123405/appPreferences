@@ -1,20 +1,53 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Application Settings</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label>Option 1</ion-label>
+      <ion-toggle [(ngModel)]="option1" (ionChange)="saveSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Option 2</ion-label>
+      <ion-toggle [(ngModel)]="option2" (ionChange)="saveSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Option 3</ion-label>
+      <ion-toggle [(ngModel)]="option3" (ionChange)="saveSettings()"></ion-toggle>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-item>
+      <ion-label>Range</ion-label>
+      <ion-range [(ngModel)]="rangeValue" min="0" max="100" (ionChange)="saveSettings()"></ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Checkbox 1</ion-label>
+      <ion-checkbox [(ngModel)]="checkbox1" (ionChange)="saveSettings()"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Checkbox 2</ion-label>
+      <ion-checkbox [(ngModel)]="checkbox2" (ionChange)="saveSettings()"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Checkbox 3</ion-label>
+      <ion-checkbox [(ngModel)]="checkbox3" (ionChange)="saveSettings()"></ion-checkbox>
+    </ion-item>
+
+    <ion-radio-group [(ngModel)]="radioOption" (ionChange)="saveSettings()">
+      <ion-item>
+        <ion-label>Radio Option 1</ion-label>
+        <ion-radio slot="start" value="option1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Radio Option 2</ion-label>
+        <ion-radio slot="start" value="option2"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-button expand="full" color="medium" (click)="resetSettings()">RESET ALL SETTINGS</ion-button>
+  </ion-list>
 </ion-content>
